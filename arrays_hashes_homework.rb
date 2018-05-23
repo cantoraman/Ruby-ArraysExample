@@ -49,10 +49,31 @@ for x in $stops
 end
 prntr()
 #7. How many stops there are in the array?
+i=0
+puts "\nThere are #{$stops.length} stops in this array"
 #8. How many ways can we return `"Falkirk High"` from the array?
+def stopreturner(stoptoreturned)
+i=0
+  for x in $stops
+    if (x == stoptoreturned)
+      return $stops[i]
+    else i+=1
+    end
+  end
+end
+p stopreturner("Falkirk High")
+
 #9. Reverse the positions of the stops in the array
+puts ""
+p $stops.reverse
+puts ""
 #10. Print out all the stops using a for loop
 
+i=0
+  for x in $stops
+    p x
+    i+=1
+  end
 # Exercise B
 
 # Given the following data structure:
