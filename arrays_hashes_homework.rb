@@ -1,17 +1,53 @@
 # Exercise A
 
 # Given the following data structure:
+$stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket" ]
 
-stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket" ]
+def prntr()
+  puts ""
+  puts $stops
+end
 
 # Complete these tasks:
-
+prntr()
 #1. Add `"Edinburgh Waverley"` to the end of the array
+$stops.push("Edinburgh Waverley")
+prntr()
 #2. Add `"Glasgow Queen St"` to the start of the array
+$stops.unshift("Glasgow Queen St")
+prntr()
 #3. Add `"Polmont"` at the appropriate point (between `"Falkirk High"` and `"Linlithgow"`)
+i=0
+for x in $stops
+  if (x == "Falkirk High")
+    break
+  else i+=1
+  end
+end
+$stops.insert((i+1), "Polmont")
+prntr()
 #4. Work out the index position of `"Linlithgow"`
+i=0
+for x in $stops
+  if (x == "Linlithgow")
+    break
+  else i+=1
+  end
+end
+puts "Index of Linlitgow is #{i}"
 #5. Remove `"Livingston"` from the array using its name
+$stops.delete("Livingston")
+prntr()
 #6. Delete `"Cumbernauld"` from the array by index
+i=0
+for x in $stops
+  if (x == "Cumbernauld")
+    $stops.delete_at(i)
+    break
+  else i+=1
+  end
+end
+prntr()
 #7. How many stops there are in the array?
 #8. How many ways can we return `"Falkirk High"` from the array?
 #9. Reverse the positions of the stops in the array
